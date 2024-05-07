@@ -8,27 +8,26 @@ import (
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"os"
+	"github.com/ghaidafasya24/kuisoner/model"
+	// "os"
 	// "time"
 )
 
-var MongoString string = os.Getenv("MONGOSTRING")
+// var MongoString string = os.Getenv("MONGOSTRING")
 
 // CONNECT DATABASE
-func MongoConnect(dbname string) *mongo.Database {
+func MongoConnect(dbname string) (db *mongo.Database) {
 	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI(MongoString))
 	if err != nil {
 		fmt.Printf("MongoConnect: %v\n", err)
-		return nil
 	}
 	return client.Database(dbname)
 }
 
-func InsertOneDoc(dbname, collection string, doc interface{}) interface{} {
-	insertResult, err := MongoConnect(dbname).Collection(collection).InsertOne(context.TODO(), doc)
+func InsertOneDoc(db string, collection string, doc interface{}) (insertedID interface{}) {
+	insertResult, err := MongoConnect(db).Collection(collection).InsertOne(context.TODO(), doc)
 	if err != nil {
 		fmt.Printf("InsertOneDoc: %v\n", err)
-		return nil
 	}
 	return insertResult.InsertedID
 }
@@ -42,6 +41,7 @@ func InsertResponden(usia string, jenisKelamin string, pekerjaan string) (insert
 	// responden.TanggalPengisian = tanggal_pengisian
 	return InsertOneDoc("TugasWeek04_Kuisoner", "responden", responden)
 }
+
 
 func GetRespondenByID(respondenID primitive.ObjectID) (responden Responden) {
 	collection := MongoConnect("tesdb2024").Collection("responden")
