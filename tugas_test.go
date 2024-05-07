@@ -4,14 +4,17 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/ghaidafasya24/Kuisoner/module"
+	// "github.com/ghaidafasya24/Kuisoner/model"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+
 )
 
 func TestInsertResponden(t *testing.T) {
 	usia := "20"
 	JenisKelamin := "Perempuan"
 	pekerjaan := "PNS"
-	insertedID := InsertResponden(usia, JenisKelamin, pekerjaan)
+	insertedID := module.InsertResponden(usia, JenisKelamin, pekerjaan)
 	fmt.Println(insertedID)
 }
 
@@ -21,18 +24,18 @@ func TestGetRespondenByID(t *testing.T) {
 		fmt.Printf("Error: %v\n", err)
 		return
 	}
-	responden := GetRespondenByID(respondenID)
+	responden := module.GetRespondenByID(respondenID)
 	fmt.Println(responden)
 }
 
 func TestGetAllResponden(t *testing.T) {
-	respondens := GetAllResponden()
+	respondens := module.GetAllResponden()
 	fmt.Println(respondens)
 }
 
 func TestInsertPertanyaan(t *testing.T) {
 	NamaPertanyaan := "Bagaimana pendapat anda tentang perkembangan zaman?"
-	insertedID := InsertPertanyaan(NamaPertanyaan)
+	insertedID := module.InsertPertanyaan(NamaPertanyaan)
 	fmt.Println(insertedID)
 }
 
@@ -42,18 +45,18 @@ func TestGetPertanyaanByID(t *testing.T) {
 		fmt.Printf("Error: %v\n", err)
 		return
 	}
-	pertanyaan := GetPertanyaanByID(pertanyaanID)
+	pertanyaan := module.GetPertanyaanByID(pertanyaanID)
 	fmt.Println(pertanyaan)
 }
 
 func TestGetAllPertanyaan(t *testing.T) {
-	pertanyaans := GetAllPertanyaan()
+	pertanyaans := module.GetAllPertanyaan()
 	fmt.Println(pertanyaans)
 }
 
 func TestInsertJawaban(t *testing.T) {
 	NamaJawaban := "Perkembangan zaman adalah hal yang alami dan tak terelakkan, membawa perubahan dalam berbagai aspek kehidupan."
 	TanggalJawab := "2024-03-30"
-	insertedID := InsertJawaban(NamaJawaban, TanggalJawab)
+	insertedID := module.InsertJawaban(NamaJawaban, TanggalJawab)
 	fmt.Println(insertedID)
 }
