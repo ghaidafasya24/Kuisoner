@@ -8,7 +8,7 @@ import (
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"github.com/ghaidafasya24/kuisoner/model"
+	// "github.com/ghaidafasya24/Kuisoner/model"
 	// "os"
 	// "time"
 )
