@@ -33,12 +33,12 @@ func InsertOneDoc(db string, collection string, doc interface{}) (insertedID int
 	return insertResult.InsertedID
 }
 
-func InsertResponden(usia string, jenisKelamin string, pekerjaan string) (insertedID interface{}) {
+func InsertResponden(usia string, jenisKelamin string, programStudi string) (insertedID interface{}) {
 	var responden model.Responden
 	responden.ID = primitive.NewObjectID()
 	responden.Usia = usia
 	responden.JenisKelamin = jenisKelamin
-	responden.Pekerjaan = pekerjaan
+	responden.ProgamStudi = programStudi
 	// responden.TanggalPengisian = tanggal_pengisian
 	return InsertOneDoc("TugasWeek04_Kuisoner", "responden", responden)
 }

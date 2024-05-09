@@ -6,7 +6,7 @@ type Responden struct {
 	ID           primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
 	Usia         string             `bson:"usia,omitempty" json:"usia,omitempty"`
 	JenisKelamin string             `bson:"jenis_kelamin,omitempty" json:"jenis_kelamin,omitempty"`
-	Pekerjaan    string             `bson:"pekerjaan,omitempty" json:"pekerjaan,omitempty"`
+	ProgamStudi    string            `bson:"program_studi,omitempty" json:"program_studi,omitempty"`
 }
 
 type Pertanyaan struct {

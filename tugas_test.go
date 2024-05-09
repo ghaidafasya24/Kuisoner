@@ -13,8 +13,8 @@ import (
 func TestInsertResponden(t *testing.T) {
 	usia := "20"
 	JenisKelamin := "Perempuan"
-	pekerjaan := "PNS"
-	insertedID := module.InsertResponden(usia, JenisKelamin, pekerjaan)
+	ProgamStudi := "Teknik Informatika"
+	insertedID := module.InsertResponden(usia, JenisKelamin, ProgamStudi)
 	fmt.Println(insertedID)
 }
 
@@ -34,7 +34,7 @@ func TestGetAllResponden(t *testing.T) {
 }
 
 func TestInsertPertanyaan(t *testing.T) {
-	NamaPertanyaan := "Bagaimana pendapat anda tentang perkembangan zaman?"
+	NamaPertanyaan := "Seberapa relevan penelitian ini dengan perkembangan terkini dalam bidang terkait?"
 	insertedID := module.InsertPertanyaan(NamaPertanyaan)
 	fmt.Println(insertedID)
 }
@@ -55,8 +55,8 @@ func TestGetAllPertanyaan(t *testing.T) {
 }
 
 func TestInsertJawaban(t *testing.T) {
-	NamaJawaban := "Perkembangan zaman adalah hal yang alami dan tak terelakkan, membawa perubahan dalam berbagai aspek kehidupan."
-	TanggalJawab := "2024-03-30"
+	NamaJawaban := "Sangat relevan dengan perkembangan terkini dalam bidangnya."
+	TanggalJawab := "2024-04-16"
 	insertedID := module.InsertJawaban(NamaJawaban, TanggalJawab)
 	fmt.Println(insertedID)
 }
