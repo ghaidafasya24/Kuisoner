@@ -38,7 +38,7 @@ func InsertResponden(usia string, jenisKelamin string, programStudi string) (ins
 	responden.ID = primitive.NewObjectID()
 	responden.Usia = usia
 	responden.JenisKelamin = jenisKelamin
-	responden.ProgamStudi = programStudi
+	responden.ProgramStudi = programStudi
 	// responden.TanggalPengisian = tanggal_pengisian
 	return InsertOneDoc("TugasWeek04_Kuisoner", "responden", responden)
 }

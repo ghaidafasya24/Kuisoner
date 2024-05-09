@@ -11,10 +11,10 @@ import (
 )
 
 func TestInsertResponden(t *testing.T) {
-	usia := "20"
-	JenisKelamin := "Perempuan"
-	ProgamStudi := "Teknik Informatika"
-	insertedID := module.InsertResponden(usia, JenisKelamin, ProgamStudi)
+	usia := "22"
+	JenisKelamin := "Laki-laki"
+	ProgramStudi := "Teknik Informatika"
+	insertedID := module.InsertResponden(usia, JenisKelamin, ProgramStudi)
 	fmt.Println(insertedID)
 }
 
