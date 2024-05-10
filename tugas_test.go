@@ -34,7 +34,7 @@ func TestGetAllResponden(t *testing.T) {
 }
 
 func TestInsertPertanyaan(t *testing.T) {
-	NamaPertanyaan := "Seberapa relevan penelitian ini dengan perkembangan terkini dalam bidang terkait?"
+	NamaPertanyaan := "Seberapa relevan topik yang dibahas dalam tugas akhir ini dengan minat Anda?"
 	insertedID := module.InsertPertanyaan(NamaPertanyaan)
 	fmt.Println(insertedID)
 }
